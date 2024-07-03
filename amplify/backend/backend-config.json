@@ -1,0 +1,95 @@
+{
+  "api": {
+    "AuthorizerAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "CustomAuthFunction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "AuthorizedUsersTriggerf130a6e2": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "AuthorizedUsers"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "CustomAuthFunction": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "AuthorizedUsers"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_AuthorizedUsersTriggerf130a6e2_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AuthorizedUsersTriggerf130a6e2"
+        }
+      ]
+    },
+    "AMPLIFY_function_AuthorizedUsersTriggerf130a6e2_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AuthorizedUsersTriggerf130a6e2"
+        }
+      ]
+    },
+    "AMPLIFY_function_CustomAuthFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CustomAuthFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_CustomAuthFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CustomAuthFunction"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "AuthorizedUsers": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}

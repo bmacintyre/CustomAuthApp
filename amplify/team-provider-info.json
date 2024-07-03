@@ -1,0 +1,33 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-customauthapp-dev-7aa1d-authRole",
+      "UnauthRoleArn": "arn:aws:iam::891377010297:role/amplify-customauthapp-dev-7aa1d-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::891377010297:role/amplify-customauthapp-dev-7aa1d-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-customauthapp-dev-7aa1d-deployment",
+      "UnauthRoleName": "amplify-customauthapp-dev-7aa1d-unauthRole",
+      "StackName": "amplify-customauthapp-dev-7aa1d",
+      "StackId": "arn:aws:cloudformation:us-east-2:891377010297:stack/amplify-customauthapp-dev-7aa1d/8d79b6b0-396c-11ef-a990-063959e520e1",
+      "AmplifyAppId": "d1hxwolj1eb8h0"
+    },
+    "categories": {
+      "function": {
+        "CustomAuthFunction": {
+          "deploymentBucketName": "amplify-customauthapp-dev-7aa1d-deployment",
+          "s3Key": "amplify-builds/CustomAuthFunction-784d7a73737775776573-build.zip"
+        },
+        "AuthorizedUsersTriggerf130a6e2": {
+          "deploymentBucketName": "amplify-customauthapp-dev-7aa1d-deployment",
+          "s3Key": "amplify-builds/AuthorizedUsersTriggerf130a6e2-6876393572737a464344-build.zip"
+        }
+      },
+      "storage": {
+        "AuthorizedUsers": {}
+      },
+      "api": {
+        "AuthorizerAPI": {}
+      }
+    }
+  }
+}

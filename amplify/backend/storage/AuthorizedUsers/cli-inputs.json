@@ -1,0 +1,24 @@
+{
+  "resourceName": "AuthorizedUsers",
+  "tableName": "AuthorizedUsers",
+  "partitionKey": {
+    "fieldName": "userId",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "lastLogin",
+    "fieldType": "string"
+  },
+  "gsi": [
+    {
+      "name": "userSessionindex",
+      "partitionKey": {
+        "fieldName": "sessionId",
+        "fieldType": "string"
+      }
+    }
+  ],
+  "triggerFunctions": [
+    "AuthorizedUsersTriggerf130a6e2"
+  ]
+}
