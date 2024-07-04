@@ -18,7 +18,8 @@ export class ApiService {
 
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
     });
 
     return this.http.get(this.apiUrl, { headers });
