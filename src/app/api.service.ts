@@ -22,6 +22,6 @@ export class ApiService {
       'Access-Control-Allow-Origin': '*',
     });
 
-    return this.http.get(this.apiUrl, { headers });
+    return this.http.post(this.apiUrl, { headers });
   }
 }
